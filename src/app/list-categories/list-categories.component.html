@@ -1,0 +1,19 @@
+{{name}}
+<button (click) = "f('twin9')">test</button>
+<input value="name"><br>
+<input [value]="name"><br>
+<input [(ngModel)]="name"><br>
+
+<div class="container">
+    <div class="row">
+      <div *ngFor="let x of categories" class="col-md-4" style="margin-bottom: 20px;">
+        <img [src]="x.image" [alt]="x.title" class="img-fluid h-50 w-75">
+        <h3>{{ x.title}} | UpperCase </h3>
+        <button *ngIf="x.available" class="btn btn-primary">Voir produits</button><br>
+        <button [hidden]="!x.available" class="btn btn-primary">Voir produits</button>
+        <div *ngIf="!x.available">categorie non disponible</div>
+        <div>{{x.available ? '' : 'categorie non disponible'}}</div>
+      </div>
+
+    </div>
+  </div>
